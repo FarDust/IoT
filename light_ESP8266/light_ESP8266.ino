@@ -16,7 +16,7 @@ JsonObject& root = jsonBuffer.createObject();
 bool lightState = true;
 
 void info(){
-  WebServer.send(418, "application/json", "{\"type\": \"ligth\", \"methods\": \[\"status\",\"update\",\"toggle\"\]}");
+  WebServer.send(200, "application/json", "{\"type\": \"ligth\", \"methods\": \[\"status\",\"update\",\"toggle\"\]}");
   }
 
 
@@ -24,7 +24,7 @@ void ask(){
   String response;
   root["isOn"] = lightState;
   root.printTo(response);
-  WebServer.send(100, "application/json", response);
+  WebServer.send(200, "application/json", response);
   }
 
 void lightManager() {
